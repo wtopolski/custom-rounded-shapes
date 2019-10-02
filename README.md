@@ -68,4 +68,4 @@ class MaterialOldVariantFragment : Fragment(R.layout.fragment_material_old_varia
 </androidx.constraintlayout.widget.ConstraintLayout>
 ~~~
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![Old material version](old_material.png)
