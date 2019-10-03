@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <fragment
-        android:name="com.example.crs.OutlineImageVariantFragment"
+        android:name="com.example.crs.MaterialVariantFragment"
         android:id="@+id/headlines_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
