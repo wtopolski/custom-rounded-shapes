@@ -13,12 +13,13 @@
         android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:src="@drawable/image"
+        android:layout_marginTop="32dp"
         android:elevation="@dimen/elevation"
         android:scaleType="centerInside"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/image"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
     <LinearLayout
