@@ -2,6 +2,10 @@
 
 ###  com.google.android.material:material:1.0.0
 
+Pros:
+- Custom shape
+- Shadow
+
 Cons:
 - Issue with attributes like: color of shadow, radius od elevation.
 
@@ -91,6 +95,37 @@ Tips:
 ~~~
 
 ![Old material version](old_material.png)
+
+### com.google.android.material:material:1.1.0-beta01
+
+~~~
+class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val radius = resources.getDimensionPixelSize(R.dimen.radius)
+        val elevation = resources.getDimensionPixelSize(R.dimen.elevation)
+        val backgroundView = view.findViewById<LinearLayout>(R.id.backgroundView)
+
+        val model = ShapeAppearanceModel()
+            .toBuilder()
+            .setAllCornerSizes(radius.toFloat())
+            .setAllEdges(TriangleEdgeTreatment(radius.toFloat(), false))
+            .setTopLeftCorner(CornerFamily.CUT, radius.toFloat() * 3)
+            .setBottomRightCorner(CornerFamily.CUT, radius.toFloat() * 5)
+            .setLeftEdge(TriangleEdgeTreatment(radius.toFloat() * 2, true))
+            .build()
+
+        backgroundView.background = MaterialShapeDrawable().apply {
+            shapeAppearanceModel = model
+            fillColor = ColorStateList.valueOf(Color.MAGENTA)
+            setElevation(elevation.toFloat() * 5)
+            setShadowColor(Color.GREEN)
+        }
+    }
+}
+~~~
 
 ### Useful links:
 - https://medium.com/@Zielony/clipping-and-shadows-on-android-e702a0d96bd4
