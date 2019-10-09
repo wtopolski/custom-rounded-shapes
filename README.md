@@ -168,6 +168,8 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
 </androidx.constraintlayout.widget.ConstraintLayout>
 ~~~
 
+![New material version](material_new.png)
+
 ### Useful links:
 - https://medium.com/@Zielony/clipping-and-shadows-on-android-e702a0d96bd4
 - https://medium.com/better-programming/practical-image-porterduff-mode-usage-in-android-3b4b5d2e8f5f
