@@ -92,7 +92,7 @@ Tips:
 </androidx.constraintlayout.widget.ConstraintLayout>
 ~~~
 
-![Old material version](old_material.png)
+![Old material version](material_old.png)
 
 ## com.google.android.material:material:1.1.0-beta01
 
