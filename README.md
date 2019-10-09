@@ -96,4 +96,4 @@ Tips:
 </androidx.constraintlayout.widget.ConstraintLayout>
 ~~~
 
-![Old material version](old_material.png | width=48)
+![Old material version](old_material.png)
