@@ -1,6 +1,6 @@
 # Custom Rounded Shapes
 
-###  com.google.android.material:material:1.0.0
+##  com.google.android.material:material:1.0.0
 
 Pros:
 - Custom shape
@@ -52,8 +52,6 @@ Tips:
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:clipToPadding="false"
     android:clipChildren="false"
     tools:context=".OutlineWidgetVariantFragment">
@@ -96,7 +94,11 @@ Tips:
 
 ![Old material version](old_material.png)
 
-### com.google.android.material:material:1.1.0-beta01
+## com.google.android.material:material:1.1.0-beta01
+
+Pros:
+- Custom shape
+- Shadow with custom color
 
 ~~~
 class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
@@ -125,6 +127,45 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
         }
     }
 }
+~~~
+
+~~~
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".MaterialVariantFragment">
+
+    <LinearLayout
+        android:id="@+id/backgroundView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/lorem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/lorem_ipsum"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 ~~~
 
 ### Useful links:
