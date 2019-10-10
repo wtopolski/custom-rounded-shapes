@@ -171,7 +171,10 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
 ![New material version](material_new.png)
 
 ### Useful links:
-- https://medium.com/@Zielony/clipping-and-shadows-on-android-e702a0d96bd4
-- https://medium.com/better-programming/practical-image-porterduff-mode-usage-in-android-3b4b5d2e8f5f
-- https://medium.com/ackee/create-beautiful-shapes-with-materialshapedrawable-874dd46e0fd5
-- https://github.com/material-components/material-components-android
+- [Clipping and shadows on Android](https://medium.com/@Zielony/clipping-and-shadows-on-android-e702a0d96bd4)
+- [Create beautiful shapes with MaterialShapeDrawable](https://medium.com/ackee/create-beautiful-shapes-with-materialshapedrawable-874dd46e0fd5)
+- [Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping)
+- [Playing with elevation in Android](https://blog.usejournal.com/playing-with-elevation-in-android-91af4f3be596)
+- [Playing with elevation in Android 🥧 (part 1)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-1-36b901287249)
+- [Playing with elevation in Android 🥧 (part 2)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-2-2b415795ceb6)
+- [Practical Image PorterDuff Mode Usage in Android](https://medium.com/better-programming/practical-image-porterduff-mode-usage-in-android-3b4b5d2e8f5f)
