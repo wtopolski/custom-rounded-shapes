@@ -8,10 +8,6 @@ import androidx.navigation.findNavController
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
-    // TODO
-    // 4) kolorowe cienie
-    // 5) smok
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         findViewById<Button>(R.id.back).setOnClickListener { back() }
