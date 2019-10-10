@@ -23,13 +23,6 @@
         android:name="com.example.crs.OutlineImageVariantFragment"
         android:label="Image">
         <action
-            android:id="@+id/action_image_to_material"
-            app:destination="@id/material"
-            app:enterAnim="@anim/nav_custom_enter_anim"
-            app:exitAnim="@anim/nav_custom_exit_anim"
-            app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
-            app:popExitAnim="@anim/nav_custom_pop_exit_anim" />
-        <action
             android:id="@+id/action_image_to_widget"
             app:destination="@id/widget"
             app:enterAnim="@anim/nav_custom_enter_anim"
@@ -43,8 +36,21 @@
         android:name="com.example.crs.OutlineWidgetVariantFragment"
         android:label="Widget">
         <action
-            android:id="@+id/action_widget_to_image"
-            app:destination="@id/image"
+            android:id="@+id/action_widget_to_shape"
+            app:destination="@id/shape"
+            app:enterAnim="@anim/nav_custom_enter_anim"
+            app:exitAnim="@anim/nav_custom_exit_anim"
+            app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
+            app:popExitAnim="@anim/nav_custom_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shape"
+        android:name="com.example.crs.ShapeVariantFragment"
+        android:label="Shape">
+        <action
+            android:id="@+id/action_shape_to_widget"
+            app:destination="@id/widget"
             app:enterAnim="@anim/nav_custom_enter_anim"
             app:exitAnim="@anim/nav_custom_exit_anim"
             app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
