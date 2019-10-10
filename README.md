@@ -170,8 +170,14 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
 
 ![New material version](material_new.png)
 
+## ViewOutlineProvider
+
+"Clipping means restricting the drawing of a view’s content to a specific shape ... If the clipped view is a layout then clipping is also applied to its children ... Starting with Android Lollipop there’s a native way of clipping views using view outlines. This method is hardware accelerated, very fast, pretty easy to use, correctly clips the layout’s content and produces antialiased outlines." [1]
+
+"ViewOutlineProvider can’t clip to shapes other than rectangles, rounded rectangles and circles." Custom paths (even convex ones) are not suported. [1] ... "There’s a small difference in supported shapes — when drawing shadows, the outline can be any convex shape, so it’s possible to use custom paths. This leads to weird situations where you can get nice shadows for diagonally cut views, but you have to clip them using a different method." [1]
+
 ### Useful links:
-- [Clipping and shadows on Android](https://medium.com/@Zielony/clipping-and-shadows-on-android-e702a0d96bd4)
+- [[1] Clipping and shadows on Android](https://medium.com/@Zielony/clipping-and-shadows-on-android-e702a0d96bd4)
 - [Create beautiful shapes with MaterialShapeDrawable](https://medium.com/ackee/create-beautiful-shapes-with-materialshapedrawable-874dd46e0fd5)
 - [Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping)
 - [Playing with elevation in Android](https://blog.usejournal.com/playing-with-elevation-in-android-91af4f3be596)
