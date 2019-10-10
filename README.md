@@ -171,11 +171,15 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
 
 "ViewOutlineProvider can’t clip to shapes other than rectangles, rounded rectangles and circles." Custom paths (even convex ones) are not suported. [1] ... "There’s a small difference in supported shapes — when drawing shadows, the outline can be any convex shape, so it’s possible to use custom paths. This leads to weird situations where you can get nice shadows for diagonally cut views, but you have to clip them using a different method." [1]
 
+"Outlines represent the outer shape of a graphics object and define the ripple area for touch feedback." [3]
+
+"Outline is providing the required information for a Material sheet to project a shadow. The default behaviour for Views is to delegate the outline definition to their background drawable. ShapeDrawables for example provide outlines that match their shapes, while ColorDrawables, BitmapDrawables, etc. provide a rectangle matching their bounds." [5]
+
+![shadow](https://miro.medium.com/max/1000/1*nFcOfSdcmwflAnboYVGqyg.gif)
+
 ### Images
 
 ### Widget
-
-"Outlines represent the outer shape of a graphics object and define the ripple area for touch feedback." [3]
 
 ### Shapes
 
@@ -186,6 +190,6 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
 - [[2] Create beautiful shapes with MaterialShapeDrawable](https://medium.com/ackee/create-beautiful-shapes-with-materialshapedrawable-874dd46e0fd5)
 - [[3] Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping)
 - [[4] Playing with elevation in Android](https://blog.usejournal.com/playing-with-elevation-in-android-91af4f3be596)
-- [Playing with elevation in Android 🥧 (part 1)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-1-36b901287249)
+- [[5] Playing with elevation in Android 🥧 (part 1)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-1-36b901287249)
 - [Playing with elevation in Android 🥧 (part 2)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-2-2b415795ceb6)
 - [Practical Image PorterDuff Mode Usage in Android](https://medium.com/better-programming/practical-image-porterduff-mode-usage-in-android-3b4b5d2e8f5f)
