@@ -290,10 +290,67 @@ class OutlineWidgetVariantFragment : Fragment(R.layout.fragment_outline_widget_v
 
 ![Outline widget](outline_widget.png)
 
-
 ### Shapes
 
 "If you are targeting API version 21 or higher and use the ShapeDrawable as a background of some element with elevation, you get the correctly shaped shadow efect under the View (works for convex shapes only)." [2]
+
+~~~
+
+    <View
+        android:id="@+id/outlineProviderDefault"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/oval"
+        android:elevation="@dimen/elevation"
+        android:padding="@dimen/elevation"
+        app:layout_constraintBottom_toTopOf="@+id/outlineProviderBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/outlineProviderBackground"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/oval"
+        android:elevation="@dimen/elevation"
+        android:outlineProvider="background"
+        android:padding="@dimen/elevation"
+        app:layout_constraintBottom_toTopOf="@+id/outlineProviderBounds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlineProviderDefault" />
+
+    <View
+        android:id="@+id/outlineProviderBounds"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/oval"
+        android:elevation="@dimen/elevation"
+        android:outlineProvider="bounds"
+        android:padding="@dimen/elevation"
+        app:layout_constraintBottom_toTopOf="@+id/outlineProviderPaddedBounds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlineProviderBackground" />
+
+    <View
+        android:id="@+id/outlineProviderPaddedBounds"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/oval"
+        android:elevation="@dimen/elevation"
+        android:outlineProvider="paddedBounds"
+        android:padding="@dimen/elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlineProviderBounds" />
+~~~
+
+![shapes](shapes.png)
 
 ## Useful links:
 - [[1] Clipping and shadows on Android](https://medium.com/@Zielony/clipping-and-shadows-on-android-e702a0d96bd4)
