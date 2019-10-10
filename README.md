@@ -189,6 +189,38 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
 
 ### Images
 
+~~~
+<LinearLayout
+        android:id="@+id/ovalShadowView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:elevation="@dimen/elevation"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintBottom_toTopOf="@+id/roundRectView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ovalView">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/image"
+            tools:ignore="ContentDescription" />
+
+</LinearLayout>
+~~~
+
+~~~
+val ovalShadowView = view.findViewById<LinearLayout>(R.id.ovalShadowView)
+ovalShadowView.background = ColorDrawable(Color.WHITE)
+ovalShadowView.outlineProvider = object : ViewOutlineProvider() {
+    override fun getOutline(view: View?, outline: Outline?) {
+        outline?.setOval(elevation, elevation, view!!.width - elevation, view.height - elevation)
+    }
+}
+ovalShadowView.clipToOutline = true
+~~~
+
 ### Widget
 
 ### Shapes
