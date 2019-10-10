@@ -2,12 +2,7 @@
 
 ##  com.google.android.material:material:1.0.0
 
-Pros:
-- Custom shape
-- Shadow
-
-Cons:
-- Issue with attributes like: color of shadow, radius od elevation.
+"The MaterialShapeDrawable class offers us to define the shape by specifying how the edges and the corners of the final shape should look like ... There is possibility to enable the shadow casting using the shadowEnabled property. You can even specify the radius, elevation and the tint of the shadow ... Unfortunately if you try to use the shadow with the MaterialShapeDrawable you end up with the nice shadow, painted using the setShadowLayer of the Paint class, intended for text shadows drawing" [2]
 
 ~~~
 class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
@@ -176,9 +171,13 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
 
 "ViewOutlineProvider can’t clip to shapes other than rectangles, rounded rectangles and circles." Custom paths (even convex ones) are not suported. [1] ... "There’s a small difference in supported shapes — when drawing shadows, the outline can be any convex shape, so it’s possible to use custom paths. This leads to weird situations where you can get nice shadows for diagonally cut views, but you have to clip them using a different method." [1]
 
+### Shapes
+
+"If you are targeting API version 21 or higher and use the ShapeDrawable as a background of some element with elevation, you get the correctly shaped shadow efect under the View (works for convex shapes only)." [2]
+
 ### Useful links:
 - [[1] Clipping and shadows on Android](https://medium.com/@Zielony/clipping-and-shadows-on-android-e702a0d96bd4)
-- [Create beautiful shapes with MaterialShapeDrawable](https://medium.com/ackee/create-beautiful-shapes-with-materialshapedrawable-874dd46e0fd5)
+- [[2] Create beautiful shapes with MaterialShapeDrawable](https://medium.com/ackee/create-beautiful-shapes-with-materialshapedrawable-874dd46e0fd5)
 - [Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping)
 - [Playing with elevation in Android](https://blog.usejournal.com/playing-with-elevation-in-android-91af4f3be596)
 - [Playing with elevation in Android 🥧 (part 1)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-1-36b901287249)
