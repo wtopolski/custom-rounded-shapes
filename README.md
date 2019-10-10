@@ -221,6 +221,8 @@ ovalShadowView.outlineProvider = object : ViewOutlineProvider() {
 ovalShadowView.clipToOutline = true
 ~~~
 
+![Outline image](outline_image.png)
+
 ### Widget
 
 ### Shapes
