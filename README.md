@@ -225,6 +225,72 @@ ovalShadowView.clipToOutline = true
 
 ### Widget
 
+~~~
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OutlineWidgetVariantFragment">
+
+    <!-- hide artifacts on bottom and right, also add space for elevation shadow on top and left  -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/elevation"
+        android:paddingStart="@dimen/elevation"
+        android:clipToPadding="false"
+        android:layout_gravity="center"
+        tools:ignore="RtlSymmetry">
+
+        <!-- determine size of view and elevation-->
+        <FrameLayout
+            android:id="@+id/outlinedView"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:elevation="@dimen/elevation"
+            android:orientation="horizontal">
+
+            <!-- Content clipped to parent outline  -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/image"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
+~~~
+
+~~~
+class OutlineWidgetVariantFragment : Fragment(R.layout.fragment_outline_widget_variant) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val radius = resources.getDimensionPixelSize(R.dimen.widget_radius)
+        val outlinedView = view.findViewById<FrameLayout>(R.id.outlinedView)
+        outlinedView.background = ColorDrawable(Color.WHITE)
+        outlinedView.outlineProvider = object : ViewOutlineProvider() {
+            override fun getOutline(view: View?, outline: Outline?) {
+                outline?.setRoundRect(0, 0, view!!.width + radius, view.height + radius, radius.toFloat())
+            }
+        }
+        outlinedView.clipToOutline = true
+    }
+}
+~~~
+
+![Outline widget](outline_widget.png)
+
+
 ### Shapes
 
 "If you are targeting API version 21 or higher and use the ShapeDrawable as a background of some element with elevation, you get the correctly shaped shadow efect under the View (works for convex shapes only)." [2]
