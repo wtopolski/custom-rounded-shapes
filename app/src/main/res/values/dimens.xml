@@ -2,4 +2,7 @@
 <resources>
     <dimen name="radius">16dp</dimen>
     <dimen name="elevation">8dp</dimen>
+
+    <!-- widget -->
+    <dimen name="widget_radius">32dp</dimen>
 </resources>

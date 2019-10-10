@@ -9,8 +9,6 @@ import androidx.navigation.findNavController
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     // TODO
-    // 2) poprawic material cien przed
-    // 3) poprawic widget
     // 4) kolorowe cienie
     // 5) smok
 

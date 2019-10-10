@@ -6,36 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".OutlineWidgetVariantFragment">
 
-    <LinearLayout
-        android:id="@+id/outlinedView"
+    <!-- hide artifacts on bottom and right, also add space for elevation shadow on top and left  -->
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/radius"
-        android:layout_marginStart="@dimen/radius"
+        android:paddingTop="@dimen/elevation"
+        android:paddingStart="@dimen/elevation"
+        android:clipToPadding="false"
         android:layout_gravity="center"
-        android:elevation="@dimen/elevation">
+        tools:ignore="RtlSymmetry">
 
-        <LinearLayout
-            android:id="@+id/clickableView"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="vertical"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true">
+        <!-- determine size of view and elevation-->
+        <FrameLayout
+            android:id="@+id/outlinedView"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:elevation="@dimen/elevation"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Content clipped to parent outline  -->
+            <ImageView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="8dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:gravity="center"
-                android:text="@string/lorem_ipsum"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/image"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true" />
 
-        </LinearLayout>
+        </FrameLayout>
 
-    </LinearLayout>
+    </FrameLayout>
 
 </FrameLayout>
