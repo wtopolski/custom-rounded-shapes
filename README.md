@@ -171,15 +171,21 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
 
 "ViewOutlineProvider can’t clip to shapes other than rectangles, rounded rectangles and circles." Custom paths (even convex ones) are not suported. [1] ... "There’s a small difference in supported shapes — when drawing shadows, the outline can be any convex shape, so it’s possible to use custom paths. This leads to weird situations where you can get nice shadows for diagonally cut views, but you have to clip them using a different method." [1]
 
+### Images
+
+### Widget
+
+"Outlines represent the outer shape of a graphics object and define the ripple area for touch feedback." [3]
+
 ### Shapes
 
 "If you are targeting API version 21 or higher and use the ShapeDrawable as a background of some element with elevation, you get the correctly shaped shadow efect under the View (works for convex shapes only)." [2]
 
-### Useful links:
+## Useful links:
 - [[1] Clipping and shadows on Android](https://medium.com/@Zielony/clipping-and-shadows-on-android-e702a0d96bd4)
 - [[2] Create beautiful shapes with MaterialShapeDrawable](https://medium.com/ackee/create-beautiful-shapes-with-materialshapedrawable-874dd46e0fd5)
-- [Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping)
-- [Playing with elevation in Android](https://blog.usejournal.com/playing-with-elevation-in-android-91af4f3be596)
+- [[3] Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping)
+- [[4] Playing with elevation in Android](https://blog.usejournal.com/playing-with-elevation-in-android-91af4f3be596)
 - [Playing with elevation in Android 🥧 (part 1)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-1-36b901287249)
 - [Playing with elevation in Android 🥧 (part 2)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-2-2b415795ceb6)
 - [Practical Image PorterDuff Mode Usage in Android](https://medium.com/better-programming/practical-image-porterduff-mode-usage-in-android-3b4b5d2e8f5f)
