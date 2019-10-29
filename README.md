@@ -360,3 +360,4 @@ class OutlineWidgetVariantFragment : Fragment(R.layout.fragment_outline_widget_v
 - [[5] Playing with elevation in Android 🥧 (part 1)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-1-36b901287249)
 - [Playing with elevation in Android 🥧 (part 2)](https://tips.seebrock3r.me/playing-with-elevation-in-android-part-2-2b415795ceb6)
 - [Practical Image PorterDuff Mode Usage in Android](https://medium.com/better-programming/practical-image-porterduff-mode-usage-in-android-3b4b5d2e8f5f)
+- [Take control of view’s shadow — Android](https://medium.com/@ArmanSo/take-control-of-views-shadow-android-c6b35ba573e9)
