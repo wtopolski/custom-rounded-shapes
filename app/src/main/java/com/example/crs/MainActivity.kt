@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         val navHost = findViewById<View>(R.id.nav_host_fragment).findNavController()
         navHost.addOnDestinationChangedListener { _, _, _ ->
-            findViewById<Button>(R.id.next).visibility = if (navHost.currentDestination?.id == R.id.shape) {
+            findViewById<Button>(R.id.next).visibility = if (navHost.currentDestination?.id == R.id.shadowColor) {
                 View.GONE
             } else {
                 View.VISIBLE
@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             R.id.material -> navHost.navigate(MaterialVariantFragmentDirections.actionMaterialToImage())
             R.id.image -> navHost.navigate(OutlineImageVariantFragmentDirections.actionImageToWidget())
             R.id.widget -> navHost.navigate(OutlineWidgetVariantFragmentDirections.actionWidgetToShape())
+            R.id.shape -> navHost.navigate(ShapeVariantFragmentDirections.actionShapeToConvex())
+            R.id.convex -> navHost.navigate(ConvexPathVariantFragmentDirections.openShadowColor())
             else -> { /* nop */ }
         }
     }

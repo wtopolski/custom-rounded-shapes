@@ -49,12 +49,31 @@
         android:name="com.example.crs.ShapeVariantFragment"
         android:label="Shape">
         <action
-            android:id="@+id/action_shape_to_widget"
-            app:destination="@id/widget"
+            android:id="@+id/action_shape_to_convex"
+            app:destination="@id/convex"
             app:enterAnim="@anim/nav_custom_enter_anim"
             app:exitAnim="@anim/nav_custom_exit_anim"
             app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
             app:popExitAnim="@anim/nav_custom_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/convex"
+        android:name="com.example.crs.ConvexPathVariantFragment"
+        android:label="Convex">
+        <action
+            android:id="@+id/openShadowColor"
+            app:destination="@id/shadowColor"
+            app:enterAnim="@anim/nav_custom_enter_anim"
+            app:exitAnim="@anim/nav_custom_exit_anim"
+            app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
+            app:popExitAnim="@anim/nav_custom_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shadowColor"
+        android:name="com.example.crs.LightVariantFragment"
+        android:label="Shadow color">
     </fragment>
 
 </navigation>

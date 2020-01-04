@@ -89,7 +89,7 @@ Tips:
 
 ![Old material version](material_old.png)
 
-## com.google.android.material:material:1.1.0-beta01
+## com.google.android.material:material:1.1.0-rc1
 
 Pros:
 - Custom shape
