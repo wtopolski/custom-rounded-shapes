@@ -14,7 +14,7 @@ class OutlineImageVariantFragment : Fragment(R.layout.fragment_outline_image_var
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val elevation = resources.getDimensionPixelSize(R.dimen.elevation) * 2
+        val elevation = resources.getDimensionPixelSize(R.dimen.elevation8) * 2
 
         val ovalShadowView = view.findViewById<LinearLayout>(R.id.ovalShadowView)
         ovalShadowView.background = ColorDrawable(Color.WHITE)

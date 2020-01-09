@@ -6,10 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipChildren="false"
-    android:clipToPadding="false"
-    tools:context=".MaterialVariantFragment">
+    android:clipToPadding="false">
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/backgroundView"
         android:layout_width="250dp"
         android:layout_height="250dp"
@@ -25,12 +24,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/lorem_ipsum"
+            android:text="@string/lorem_ipsum_short"
             android:clickable="true"
             android:focusable="true"
             android:background="?android:attr/selectableItemBackground"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
-    </LinearLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

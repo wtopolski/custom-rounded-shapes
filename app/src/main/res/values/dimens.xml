@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="radius">16dp</dimen>
-    <dimen name="elevation">8dp</dimen>
+    <dimen name="elevation4">4dp</dimen>
+    <dimen name="elevation8">8dp</dimen>
+    <dimen name="elevation16">16dp</dimen>
+    <dimen name="elevation24">24dp</dimen>
 
     <!-- widget -->
     <dimen name="widget_radius">32dp</dimen>

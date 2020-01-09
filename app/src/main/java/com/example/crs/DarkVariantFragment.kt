@@ -7,7 +7,7 @@ import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.shape.MaterialShapeDrawable
 
-class LightVariantFragment : Fragment(R.layout.fragment_light_variant) {
+class DarkVariantFragment : Fragment(R.layout.fragment_dark_variant) {
 
     lateinit var cardView: FrameLayout
 

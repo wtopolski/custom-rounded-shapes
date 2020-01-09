@@ -12,7 +12,7 @@ class ConvexPathVariantFragment : Fragment(R.layout.fragment_convex_path_variant
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val elevation = resources.getDimensionPixelSize(R.dimen.elevation)
+        val elevation = resources.getDimensionPixelSize(R.dimen.elevation8)
 
         val outlineProviderConvexPath = view.findViewById<FrameLayout>(R.id.outlineProviderConvexPath)
         outlineProviderConvexPath.outlineProvider = object : ViewOutlineProvider() {

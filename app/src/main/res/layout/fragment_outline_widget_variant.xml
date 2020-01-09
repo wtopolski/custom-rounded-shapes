@@ -3,15 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OutlineWidgetVariantFragment">
+    android:layout_height="match_parent">
 
     <!-- hide artifacts on bottom and right, also add space for elevation shadow on top and left  -->
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/elevation"
-        android:paddingStart="@dimen/elevation"
+        android:paddingTop="@dimen/elevation8"
+        android:paddingStart="@dimen/elevation8"
         android:clipToPadding="false"
         android:layout_gravity="center"
         tools:ignore="RtlSymmetry">
@@ -21,7 +20,7 @@
             android:id="@+id/outlinedView"
             android:layout_width="250dp"
             android:layout_height="100dp"
-            android:elevation="@dimen/elevation"
+            android:elevation="@dimen/elevation8"
             android:orientation="horizontal">
 
             <!-- Content clipped to parent outline  -->

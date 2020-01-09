@@ -5,7 +5,7 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.LinearLayout
+import android.view.ViewGroup
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
@@ -17,8 +17,8 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
         super.onViewCreated(view, savedInstanceState)
 
         val radius = resources.getDimensionPixelSize(R.dimen.radius)
-        val elevation = resources.getDimensionPixelSize(R.dimen.elevation)
-        val backgroundView = view.findViewById<LinearLayout>(R.id.backgroundView)
+        val elevation = resources.getDimensionPixelSize(R.dimen.elevation8)
+        val backgroundView = view.findViewById<ViewGroup>(R.id.backgroundView)
 
         val model = ShapeAppearanceModel()
             .toBuilder()

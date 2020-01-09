@@ -2,58 +2,60 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <View
-        android:id="@+id/outlineProviderDefault"
+        android:id="@+id/sample1"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:background="@drawable/oval"
+        android:background="@color/white"
         android:elevation="@dimen/elevation8"
-        android:padding="@dimen/elevation8"
-        app:layout_constraintBottom_toTopOf="@+id/outlineProviderBackground"
+        android:outlineAmbientShadowColor="@color/colorAccent"
+        android:outlineSpotShadowColor="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/sample2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/outlineProviderBackground"
+        android:id="@+id/sample2"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:background="@drawable/oval"
+        android:background="@color/white"
         android:elevation="@dimen/elevation8"
-        android:outlineProvider="background"
-        android:padding="@dimen/elevation8"
-        app:layout_constraintBottom_toTopOf="@+id/outlineProviderBounds"
+        android:outlineAmbientShadowColor="@color/colorAccent"
+        android:outlineSpotShadowColor="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/sample3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlineProviderDefault" />
+        app:layout_constraintTop_toBottomOf="@+id/sample1" />
 
     <View
-        android:id="@+id/outlineProviderBounds"
+        android:id="@+id/sample3"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:background="@drawable/oval"
+        android:background="@color/white"
         android:elevation="@dimen/elevation8"
-        android:outlineProvider="bounds"
-        android:padding="@dimen/elevation8"
-        app:layout_constraintBottom_toTopOf="@+id/outlineProviderPaddedBounds"
+        android:outlineAmbientShadowColor="@color/colorAccent"
+        android:outlineSpotShadowColor="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/sample4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlineProviderBackground" />
+        app:layout_constraintTop_toBottomOf="@+id/sample2" />
 
     <View
-        android:id="@+id/outlineProviderPaddedBounds"
+        android:id="@+id/sample4"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:background="@drawable/oval"
+        android:background="@color/white"
         android:elevation="@dimen/elevation8"
-        android:outlineProvider="paddedBounds"
-        android:padding="@dimen/elevation8"
+        android:outlineAmbientShadowColor="@color/colorAccent"
+        android:outlineSpotShadowColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlineProviderBounds" />
+        app:layout_constraintTop_toBottomOf="@+id/sample3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

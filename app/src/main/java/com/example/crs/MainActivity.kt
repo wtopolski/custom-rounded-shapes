@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -15,10 +16,19 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         val navHost = findViewById<View>(R.id.nav_host_fragment).findNavController()
         navHost.addOnDestinationChangedListener { _, _, _ ->
-            findViewById<Button>(R.id.next).visibility = if (navHost.currentDestination?.id == R.id.shadowColor) {
+
+            val currentDestinationId = navHost.currentDestination?.id
+
+            findViewById<Button>(R.id.next).visibility = if (currentDestinationId == R.id.shadowColor) {
                 View.GONE
             } else {
                 View.VISIBLE
+            }
+
+            if (currentDestinationId == R.id.dark) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
     }
@@ -26,11 +36,13 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private fun next() {
         val navHost = findViewById<View>(R.id.nav_host_fragment).findNavController()
         when (navHost.currentDestination?.id ?: 0) {
-            R.id.material -> navHost.navigate(MaterialVariantFragmentDirections.actionMaterialToImage())
-            R.id.image -> navHost.navigate(OutlineImageVariantFragmentDirections.actionImageToWidget())
-            R.id.widget -> navHost.navigate(OutlineWidgetVariantFragmentDirections.actionWidgetToShape())
-            R.id.shape -> navHost.navigate(ShapeVariantFragmentDirections.actionShapeToConvex())
-            R.id.convex -> navHost.navigate(ConvexPathVariantFragmentDirections.openShadowColor())
+            R.id.dark -> navHost.navigate(DarkVariantFragmentDirections.nextScreen())
+            R.id.light -> navHost.navigate(LightVariantFragmentDirections.nextScreen())
+            R.id.material -> navHost.navigate(MaterialVariantFragmentDirections.nextScreen())
+            R.id.image -> navHost.navigate(OutlineImageVariantFragmentDirections.nextScreen())
+            R.id.widget -> navHost.navigate(OutlineWidgetVariantFragmentDirections.nextScreen())
+            R.id.shape -> navHost.navigate(ShapeVariantFragmentDirections.nextScreen())
+            R.id.convex -> navHost.navigate(ConvexPathVariantFragmentDirections.nextScreen())
             else -> { /* nop */ }
         }
     }
