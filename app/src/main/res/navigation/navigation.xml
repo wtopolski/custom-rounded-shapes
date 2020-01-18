@@ -10,7 +10,7 @@
         android:name="com.example.crs.OutlineProviderVariantFragment">
         <action
             android:id="@+id/nextScreen"
-            app:destination="@id/shape"
+            app:destination="@id/shadow"
             app:enterAnim="@anim/nav_custom_enter_anim"
             app:exitAnim="@anim/nav_custom_exit_anim"
             app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
@@ -18,32 +18,8 @@
     </fragment>
 
     <fragment
-        android:id="@+id/shape"
-        android:name="com.example.crs.ShapeVariantFragment">
-        <action
-            android:id="@+id/nextScreen"
-            app:destination="@id/dark"
-            app:enterAnim="@anim/nav_custom_enter_anim"
-            app:exitAnim="@anim/nav_custom_exit_anim"
-            app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
-            app:popExitAnim="@anim/nav_custom_pop_exit_anim" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/dark"
-        android:name="com.example.crs.DarkVariantFragment">
-        <action
-            android:id="@+id/nextScreen"
-            app:destination="@id/light"
-            app:enterAnim="@anim/nav_custom_enter_anim"
-            app:exitAnim="@anim/nav_custom_exit_anim"
-            app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
-            app:popExitAnim="@anim/nav_custom_pop_exit_anim" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/light"
-        android:name="com.example.crs.LightVariantFragment">
+        android:id="@+id/shadow"
+        android:name="com.example.crs.ShadowVariantFragment">
         <action
             android:id="@+id/nextScreen"
             app:destination="@id/material"
@@ -58,7 +34,7 @@
         android:name="com.example.crs.MaterialVariantFragment">
         <action
             android:id="@+id/nextScreen"
-            app:destination="@id/shadowColor"
+            app:destination="@id/theme"
             app:enterAnim="@anim/nav_custom_enter_anim"
             app:exitAnim="@anim/nav_custom_exit_anim"
             app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
@@ -66,7 +42,31 @@
     </fragment>
 
     <fragment
-        android:id="@+id/shadowColor"
-        android:name="com.example.crs.ShadowColorVariantFragment"></fragment>
+        android:id="@+id/theme"
+        android:name="com.example.crs.ThemeVariantFragment">
+        <action
+            android:id="@+id/nextScreen"
+            app:destination="@id/light"
+            app:enterAnim="@anim/nav_custom_enter_anim"
+            app:exitAnim="@anim/nav_custom_exit_anim"
+            app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
+            app:popExitAnim="@anim/nav_custom_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/light"
+        android:name="com.example.crs.LightVariantFragment">
+        <action
+            android:id="@+id/nextScreen"
+            app:destination="@id/dark"
+            app:enterAnim="@anim/nav_custom_enter_anim"
+            app:exitAnim="@anim/nav_custom_exit_anim"
+            app:popEnterAnim="@anim/nav_custom_pop_enter_anim"
+            app:popExitAnim="@anim/nav_custom_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dark"
+        android:name="com.example.crs.DarkVariantFragment" />
 
 </navigation>

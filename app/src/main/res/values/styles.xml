@@ -10,6 +10,9 @@
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.App.LargeComponent</item>
 
         <item name="floatingActionButtonStyle">@style/Widget.App.FloatingActionButton</item>
+
+<!--        <item name="android:ambientShadowAlpha">1</item>-->
+<!--        <item name="android:spotShadowAlpha">1</item>-->
     </style>
 
     <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">

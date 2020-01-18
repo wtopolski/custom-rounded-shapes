@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
             val currentDestinationId = navHost.currentDestination?.id
 
-            findViewById<Button>(R.id.next).visibility = if (currentDestinationId == R.id.shadowColor) {
+            findViewById<Button>(R.id.next).visibility = if (currentDestinationId == R.id.dark) {
                 View.GONE
             } else {
                 View.VISIBLE
@@ -37,10 +37,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val navHost = findViewById<View>(R.id.nav_host_fragment).findNavController()
         when (navHost.currentDestination?.id ?: 0) {
             R.id.outlineProvider -> navHost.navigate(OutlineProviderVariantFragmentDirections.nextScreen())
-            R.id.shape -> navHost.navigate(ShapeVariantFragmentDirections.nextScreen())
-            R.id.dark -> navHost.navigate(DarkVariantFragmentDirections.nextScreen())
-            R.id.light -> navHost.navigate(LightVariantFragmentDirections.nextScreen())
+            R.id.shadow -> navHost.navigate(ShadowVariantFragmentDirections.nextScreen())
             R.id.material -> navHost.navigate(MaterialVariantFragmentDirections.nextScreen())
+            R.id.theme -> navHost.navigate(ThemeVariantFragmentDirections.nextScreen())
+            R.id.light -> navHost.navigate(LightVariantFragmentDirections.nextScreen())
             else -> { /* nop */ }
         }
     }
