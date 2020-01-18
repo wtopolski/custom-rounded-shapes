@@ -15,8 +15,6 @@ class OutlineProviderVariantFragment : Fragment(R.layout.fragment_outline_provid
         val dp24 = resources.getDimensionPixelSize(R.dimen.dp24)
         val dp32 = resources.getDimensionPixelSize(R.dimen.dp32)
 
-        // TODO: convext path z clipowaniem na canvasie własnego widoku jako dodatkowy przykład
-
         /**
          * Path::isConvex() returns the path's convexity, as defined by the content of the path.
          * A path is convex if it has a single contour, and only ever curves in a
@@ -40,6 +38,24 @@ class OutlineProviderVariantFragment : Fragment(R.layout.fragment_outline_provid
             }
         }
         outlineProviderConvexPath.clipToOutline = true
+
+        val outlineProviderConvexPathCanvas = view.findViewById<FrameLayout>(R.id.outlineProviderConvexPathCanvas)
+        outlineProviderConvexPathCanvas.outlineProvider = object : ViewOutlineProvider() {
+            override fun getOutline(view: View?, outline: Outline?) {
+                val path = Path()
+                val width = view!!.width
+                val height = view.height
+                val radii = floatArrayOf(
+                    width.toFloat() * 0.7f, height.toFloat() * 0.7f, // top-left
+                    0f, 0f, // top-right
+                    width.toFloat() * 0.6f, height.toFloat() * 0.6f, // bottom-right
+                    0f, 0f // bottom-left
+                )
+                path.addRoundRect(0f, 0f, width.toFloat(), height.toFloat(), radii, Path.Direction.CW)
+                outline?.setConvexPath(path)
+            }
+        }
+        outlineProviderConvexPathCanvas.clipToOutline = true
 
         /**
          * Outline::canClip() returns whether the outline can be used to clip a View.
