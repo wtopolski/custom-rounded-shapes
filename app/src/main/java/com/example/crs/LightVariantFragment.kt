@@ -18,7 +18,7 @@ class LightVariantFragment : Fragment(R.layout.fragment_light_variant) {
 
     override fun onStart() {
         super.onStart()
-        val animator = ValueAnimator.ofInt(0, resources.getDimensionPixelOffset(R.dimen.elevation16))
+        val animator = ValueAnimator.ofInt(0, resources.getDimensionPixelOffset(R.dimen.dp16))
         animator.addUpdateListener { animation ->
             val value = animation.animatedValue as Int
             cardView.background = MaterialShapeDrawable.createWithElevationOverlay(cardView.context, value.toFloat())

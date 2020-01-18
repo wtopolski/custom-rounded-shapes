@@ -16,8 +16,8 @@ class MaterialVariantFragment : Fragment(R.layout.fragment_material_variant) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val radius = resources.getDimensionPixelSize(R.dimen.radius)
-        val elevation = resources.getDimensionPixelSize(R.dimen.elevation8)
+        val radius = resources.getDimensionPixelSize(R.dimen.dp16)
+        val elevation = resources.getDimensionPixelSize(R.dimen.dp8)
         val backgroundView = view.findViewById<ViewGroup>(R.id.backgroundView)
 
         val model = ShapeAppearanceModel()

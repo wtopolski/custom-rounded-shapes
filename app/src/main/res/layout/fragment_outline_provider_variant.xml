@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+    @drawable/rectangle defines background, ripple effect and shadow.
+    android:outlineProvider="background" is redundant, because it is
+    default value. Unfortunately content is not clipped.
+    -->
+    <TextView
+        android:id="@+id/outlineProviderTextView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/rectangle"
+        android:clickable="true"
+        android:elevation="@dimen/dp8"
+        android:focusable="true"
+        android:outlineProvider="background"
+        android:text="@string/lorem_ipsum"
+        app:layout_constraintBottom_toTopOf="@+id/outlineProviderFrameLayout"
+        app:layout_constraintEnd_toStartOf="@+id/outlineProviderImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--
+    The same case as above, the only difference is FrameLayout as
+    container for children.
+    -->
+    <FrameLayout
+        android:id="@+id/outlineProviderFrameLayout"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/rectangle"
+        android:clickable="true"
+        android:clipChildren="true"
+        android:elevation="@dimen/dp8"
+        android:focusable="true"
+        android:outlineProvider="background"
+        app:layout_constraintBottom_toTopOf="@+id/outlineProviderConvexPath"
+        app:layout_constraintEnd_toStartOf="@+id/outlineProviderImageCornerRoundedFail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlineProviderTextView">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/lorem_ipsum" />
+
+    </FrameLayout>
+
+    <!--
+    Using outlineProvider on widget within "outline?.setConvexPath(path)" allows
+    to define shadow, but the shape is not oval, square or rounded square so
+    clipping children is not supported.
+    -->
+    <FrameLayout
+        android:id="@+id/outlineProviderConvexPath"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:elevation="@dimen/dp8"
+        app:layout_constraintBottom_toTopOf="@id/outlineProviderOval"
+        app:layout_constraintEnd_toStartOf="@+id/outlineProviderImageCornerRoundedSuccess"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlineProviderFrameLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/lorem_ipsum" />
+
+    </FrameLayout>
+
+    <!--
+    The same method as above, but with "setOval" insteadof "setConvexPath". This time
+    outline is clippable so all its children are limited to the shape.
+    -->
+    <FrameLayout
+        android:id="@+id/outlineProviderOval"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:clipChildren="true"
+        android:elevation="@dimen/dp8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/outlineProviderCorner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlineProviderConvexPath">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/lorem_ipsum" />
+
+    </FrameLayout>
+
+    <!--
+    Fully clippable version with ripple effect and shadow. Image view clipped
+    to rounded square.
+    -->
+    <FrameLayout
+        android:id="@+id/outlineProviderImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:elevation="@dimen/dp8"
+        app:layout_constraintBottom_toBottomOf="@+id/outlineProviderTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/outlineProviderTextView"
+        app:layout_constraintTop_toTopOf="@+id/outlineProviderTextView">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
+
+    <!--
+    Try to make only top rounded shape. Shadow issue.
+    -->
+    <FrameLayout
+        android:id="@+id/outlineProviderImageCornerRoundedFail"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:elevation="@dimen/dp8"
+        app:layout_constraintBottom_toBottomOf="@+id/outlineProviderFrameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/outlineProviderFrameLayout"
+        app:layout_constraintTop_toTopOf="@+id/outlineProviderFrameLayout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
+
+    <!-- hide artifacts on bottom and right, also add space for elevation shadow on top and left  -->
+    <FrameLayout
+        android:id="@+id/outlineProviderImageCornerRoundedSuccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/dp8"
+        android:paddingTop="@dimen/dp8"
+        app:layout_constraintBottom_toBottomOf="@+id/outlineProviderConvexPath"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/outlineProviderConvexPath"
+        app:layout_constraintTop_toTopOf="@+id/outlineProviderConvexPath"
+        tools:ignore="RtlSymmetry">
+
+        <!-- determine size of view and elevation-->
+        <FrameLayout
+            android:id="@+id/outlineProviderImageCornerRoundedSuccessOutlinedView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:elevation="@dimen/dp8"
+            tools:ignore="UselessParent">
+
+            <!-- Content clipped to parent outline  -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/lorem_ipsum" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/outlineProviderCorner"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/corner"
+        android:clickable="true"
+        android:clipChildren="true"
+        android:elevation="@dimen/dp8"
+        android:focusable="true"
+        android:outlineProvider="background"
+        app:layout_constraintBottom_toTopOf="@+id/outlineProviderOval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/outlineProviderOval"
+        app:layout_constraintTop_toBottomOf="@+id/outlineProviderOval">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/lorem_ipsum" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

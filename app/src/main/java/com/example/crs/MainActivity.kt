@@ -36,13 +36,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private fun next() {
         val navHost = findViewById<View>(R.id.nav_host_fragment).findNavController()
         when (navHost.currentDestination?.id ?: 0) {
+            R.id.outlineProvider -> navHost.navigate(OutlineProviderVariantFragmentDirections.nextScreen())
+            R.id.shape -> navHost.navigate(ShapeVariantFragmentDirections.nextScreen())
             R.id.dark -> navHost.navigate(DarkVariantFragmentDirections.nextScreen())
             R.id.light -> navHost.navigate(LightVariantFragmentDirections.nextScreen())
             R.id.material -> navHost.navigate(MaterialVariantFragmentDirections.nextScreen())
-            R.id.image -> navHost.navigate(OutlineImageVariantFragmentDirections.nextScreen())
-            R.id.widget -> navHost.navigate(OutlineWidgetVariantFragmentDirections.nextScreen())
-            R.id.shape -> navHost.navigate(ShapeVariantFragmentDirections.nextScreen())
-            R.id.convex -> navHost.navigate(ConvexPathVariantFragmentDirections.nextScreen())
             else -> { /* nop */ }
         }
     }
